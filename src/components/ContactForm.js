@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Form, InputThumb, Input, ButtonThumb } from './ContactForm.styled'; 
+import { Form, InputThumb, Input, ButtonThumb } from './ContactForm.styled';
+import PropTypes from 'prop-types';
 
 function ContactForm({ onAddContact }) {
   const [name, setName] = useState('');
@@ -43,6 +44,10 @@ function ContactForm({ onAddContact }) {
       </ButtonThumb>
     </Form>
   );
-}
+};
+
+ContactForm.propTypes = {
+  onAddContact: PropTypes.func.isRequired,
+};
 
 export default ContactForm;
